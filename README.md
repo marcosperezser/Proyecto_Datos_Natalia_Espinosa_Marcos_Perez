@@ -67,6 +67,7 @@ Además, se comprueba si la entrada es una lista (como puede ser el caso de text
 ### 3. Representación vectorial de los documentos mediante tres procedimientos diferentes:
 
 TF-IDF
+#### 3.1 TF-IDF
 
 Una vez preprocesados los textos, se utiliza el modelo Bag of Words (BoW) para construir un diccionario de tokens. Este diccionario asigna a cada término único del corpus un identificador numérico, lo que permite representar los textos como combinaciones de estos identificadores y sus frecuencias de aparición en los documentos. 
 
@@ -77,6 +78,26 @@ Después de este filtrado, se aplica el modelo TF-IDF) sobre la representación 
 Los términos comunes en todo el corpus, como palabras de uso cotidiano, recibiran menos peso, mientras que los términos que son más específicos para un documento individual se consideren más importantes. El resultado es una representación numérica de los textos en forma de vectores ponderados, que reflejan la relevancia relativa de cada término en el contexto del corpus.
 
 Se ha representado en un gráfico la distribución de tokens para la columna desc: 
+
+<div align="center">
+  <img src="images/ImagenTokenDir.jpg" alt="Distribución Token Directions" width="400px">
+</div>
+
+La distribución de tokens para la columna directions: 
+<div align="center">
+  <img src="images/ImagenTokenDesc.jpg" alt="Distribución Token Desc" width="400px">
+</div>
+
+
+#### 3.2 WORD2VEC
+
+El proceso de vectorización con Word2Vec consiste en transformar los textos preprocesados en representaciones numéricas multidimensionales que capturan las relaciones semánticas entre palabras. Para ello, se entrena un modelo Word2Vec con los textos de descripciones, direcciones y categorías utilizando parámetros como un tamaño de vector de 100 dimensiones (vector_size=100), una ventana de contexto de 5 palabras (window=5) y un mínimo de 5 apariciones por palabra (min_count=5). 
+
+Una vez entrenado, el modelo asigna a cada palabra un vector numérico que refleja su relación con otras palabras en función de su contexto. Para representar documentos completos, se calcula el vector promedio de las palabras que aparecen en el texto, ignorando aquellas que no están en el vocabulario del modelo. Si no hay palabras válidas en el texto, se asigna un vector de ceros.
+
+
+Posteriormente, se extraen los vectores de las palabras del vocabulario y se aplica una reducción de dimensiones mediante PCA (Análisis de Componentes Principales), que permite reducir los vectores de 100 dimensiones a 2 componentes principales para visualización. Esta transformación facilita representar gráficamente las palabras en un plano 2D, donde se observan agrupaciones que reflejan las relaciones semánticas aprendidas por Word2Vec
+
 
 <div align="center">
   <img src="images/ImagenTokenDir.jpg" alt="Distribución Token Directions" width="400px">

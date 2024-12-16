@@ -36,3 +36,28 @@ En este análisis se ha visualizado la relación entre la variable de salida rat
   <img src="images/AnalisisCategorias.png" alt="Gráfica Categorias" width="55%" style="display:inline-block; margin-right:10px;">
   <img src="images/AnalisisCategorias2.png" alt="Gráfica Categorias" width="35%" style="display:inline-block;">
 </div>
+
+
+### 2. Implementación de un pipeline para el preprocesado de los textos. 
+Se ha implementado un pipeline de preprocesado de textos con el objetivo de preparar los datos textuales para su posterior análisis y representación vectorial. Se han realizado en una serie de transformaciones aplicadas al texto, utilizando la librería NLTK. 
+
+Se ha creado una función de preprocesado llamada preprocess_text, donde se ha realizado lo siguiente:
+
+Tokenización:
+-	Se utiliza la función word_tokenize de NLTK para dividir el texto en tokens individuales (palabras). Este paso permite trabajar con cada palabra de forma aislada.
+
+Normalización del texto:
+-	Se convierten todos los tokens a minúsculas para evitar duplicidades causadas por diferencias en mayúsculas y minúsculas.
+-	Se eliminan caracteres especiales y se filtran únicamente tokens alfanuméricos mediante una comprobación con isalnum().
+
+Eliminación de números:
+-	Al analizar la columna directions, se ha observado que muchas recetas presentan los pasos numerados, utilizando un formato como "1.", "2.", etc.. Dado que esta información no aporta relevancia al proceso de tokenización ni al análisis del contenido del texto, se ha decidido descartar estos tokens durante el preprocesado. Para ello, se aplicó una expresión regular que identifica y elimina los números seguidos de un punto,
+
+Eliminación de Stopwords:
+-	Las stopwords (palabras muy frecuentes como "the", "is", "and") se eliminan utilizando una lista predefinida en inglés proporcionada por NLTK. 
+
+Lematización:
+-	Finalmente, se aplica la lematización mediante WordNetLemmatizer, que reduce las palabras a su forma base o raíz. Este paso ayuda a agrupar palabras con un significado similar y reducir la dimensionalidad del texto.
+
+Además, se comprueba si la entrada es una lista (como puede ser el caso de textos tokenizados previos) y, en ese caso, se unen los elementos en una única cadena de texto. La salida de esta función es una lista de tokens limpios y lematizados, que pueden ser utilizados posteriormente en técnicas de vectorización como TF-IDF, Word2Vec, o embeddings contextuales.
+

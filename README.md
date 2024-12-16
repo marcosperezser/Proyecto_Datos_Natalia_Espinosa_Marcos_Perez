@@ -197,10 +197,14 @@ Los hiperparámetros de tasa de aprendizaje y numero de epocas se han ido modifi
 
 ### 4.2.3 Entrenamiento y evaluación con vectorización BERT
 
+---
 
-### 5. Extensión 
+### 5. Fine-tunning con Hugging Face
 
-### Traducciones
+
+### 6. Extensión 
+
+### Traducción al francés
 
 En esta extensión, se ha llevado a cabo la traducción al francés de todas las recetas cuya descripción (desc) o instrucciones (directions) contenían la palabra "French". 
 Para ello se ha crado una nueva base de datos filtrando únicamente aquellas recetas en las que la palabra "French" estuviera presente en las columnas desc o directions del conjunto de datos original. Esto nos permitió enfocar el proceso de traducción en un subconjunto específico de recetas relevantes.

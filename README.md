@@ -79,11 +79,11 @@ Los términos comunes en todo el corpus, como palabras de uso cotidiano, recibir
 Se ha representado en un gráfico la distribución de tokens para la columna desc: 
 
 <div align="center">
-  <img src="images/ImagenTokenDir.jpg" alt="" width="400px">
+  <img src="images/ImagenTokenDir.jpg" alt="Distribución Token Directions" width="400px">
 </div>
 
 La distribución de tokens para la columna directions: 
 <div align="center">
-  <img src="images/ImagenTokenDesc.jpg" alt="Distribución Token Directions" width="400px">
+  <img src="images/ImagenTokenDesc.jpg" alt="Distribución Token Desc" width="400px">
 </div>
 

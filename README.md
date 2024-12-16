@@ -153,7 +153,6 @@ Se ha decidido utilizar como variables de entrada las categorías, las variables
 
 ### 4.2.2 Vectorización WORD2VEC
 
-## Resultados Word2Vec
 
 | Variables de Entrada                            |   MSE |   MAE |   R2  |
 |-------------------------------------------------|-------|-------|-------|

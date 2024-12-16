@@ -74,7 +74,7 @@ Una vez preprocesados los textos, se utiliza el modelo Bag of Words (BoW) para c
 
 Como no todos los términos son igualmente útiles para el análisis se aplican filtros al diccionario: se eliminan los términos que aparecen en muy pocos documentos (menos de un umbral definido, como 10), ya que probablemente no aportan información generalizable, y aquellos que aparecen en una proporción demasiado alta del corpus (más del 75% de los documentos), ya que suelen ser palabras genéricas sin valor distintivo.
 
-Después de este filtrado, se aplica el modelo TF-IDF) sobre la representación BoW. TF-IDF pondera cada término según su frecuencia en un documento específico y su frecuencia inversa en el corpus completo. 
+Después de este filtrado, se aplica el modelo TF-IDF sobre la representación BoW. TF-IDF pondera cada término según su frecuencia en un documento específico y su frecuencia inversa en el corpus completo. 
 
 Los términos comunes en todo el corpus, como palabras de uso cotidiano, recibiran menos peso, mientras que los términos que son más específicos para un documento individual se consideren más importantes. El resultado es una representación numérica de los textos en forma de vectores ponderados, que reflejan la relevancia relativa de cada término en el contexto del corpus.
 

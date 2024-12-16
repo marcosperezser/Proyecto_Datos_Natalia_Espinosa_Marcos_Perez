@@ -66,7 +66,6 @@ Además, se comprueba si la entrada es una lista (como puede ser el caso de text
 
 ### 3. Representación vectorial de los documentos mediante tres procedimientos diferentes:
 
-TF-IDF
 #### 3.1 TF-IDF
 
 Una vez preprocesados los textos, se utiliza el modelo Bag of Words (BoW) para construir un diccionario de tokens. Este diccionario asigna a cada término único del corpus un identificador numérico, lo que permite representar los textos como combinaciones de estos identificadores y sus frecuencias de aparición en los documentos. 

@@ -227,6 +227,26 @@ Observamos que los resultados son prácticamente iguales.
 
 ### 5. Fine-tunning con Hugging Face
 
+El fine-tuning de BERT consiste en ajustar los pesos del modelo preentrenado para una tarea específica, en este caso, regresión. A diferencia de la vectorización previa (donde se generaron representaciones de texto para usarlas con modelos como Random Forest o redes neuronales), en el fine-tuning se entrena el modelo completo, adaptando todas sus capas.
+
+Los pasos realizar el fine-tuning son:
+
+#### 1. Carga del modelo preentrenado: 
+Se utiliza BertForSequenceClassification de Hugging Face, diseñado para tareas supervisadas. En este caso, se configura con una sola salida continua (num_labels=1) para realizar predicciones numéricas.
+
+#### 2. Definición de argumentos de entrenamiento: 
+Se especifican parámetros clave como el número de épocas, tamaño de lote, tasa de aprendizaje, pasos de calentamiento (warmup), y regularización (weight_decay). Estos controlan cómo el modelo ajusta sus pesos.
+
+#### 3. Uso de Trainer de Hugging Face: 
+
+Se emplea el objeto Trainer, que automatiza el proceso de entrenamiento. Este recibe: el modelo ajustado, los datos de entrenamiento y evaluación y los parámetros definidos en los argumentos de entrenamiento.
+
+#### 4. Entrenamiento del modelo: 
+Durante el entrenamiento, el modelo ajusta los pesos de todas sus capas (incluida la capa preentrenada de BERT) para minimizar el error en las predicciones numéricas. Esto permite que BERT no solo use sus representaciones aprendidas, sino que las refine específicamente para esta tarea.
+
+#### 5. Evaluación y guardado: 
+Tras el entrenamiento, se evalúa el modelo con los datos de prueba y se guarda junto al tokenizador. Esto permite reutilizar el modelo ajustado directamente en futuras predicciones.
+
 
 ### 6. Extensión 
 

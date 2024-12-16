@@ -233,7 +233,9 @@ Una vez ajustado el modelo, implementamos una funcionalidad para generar recetas
 
 5. Ejemplo de Resultado
 
-
-
+El modelo ha logrado generar un texto estructurado a partir de introducir "cupcakes" como título. El resultado incluye una descripción introductoria, ingredientes y pasos de preparación que siguen el formato típico de una receta. Aunque presenta algunas incoherencias, como la referencia a una "tarta" en lugar de cupcakes, el modelo demuestra su capacidad para generar contenido relevante y mantener una lógica general en la creación de recetas.
+<div align="center">
+  <img src="images/generacion.png" alt="Extension: Traducciones" width="900px">
+</div>
 
 

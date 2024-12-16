@@ -155,8 +155,8 @@ Se ha decidido utilizar como variables de entrada las categorías, las variables
 
 ## Resultados Word2Vec
 
-| Variables Incluidas                              |   MSE |   MAE |   R2  |
-|--------------------------------------------------|-------|-------|-------|
+| Variables de Entrada                            |   MSE |   MAE |   R2  |
+|-------------------------------------------------|-------|-------|-------|
 | Con categorías, descripciones y direcciones     | 1.294 | 0.759 | 0.187 |
 | Sin categorías, descripciones y direcciones     | 1.315 | 0.773 | 0.173 |
 | Con categorías y descripciones                  | 1.265 | 0.749 | 0.205 |

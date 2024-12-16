@@ -145,10 +145,11 @@ Para cada una de las vectorizaciones, se han probado diferentes conjuntos de var
 
 | Variables de Entrada                                       |   MSE |   MAE |   R2  |
 |------------------------------------------------------------|-------|-------|-------|
-| Sin categorías, con direcciones, con descripciones         | 1.330 | 0.770 | 0.165 |
-| Con categorías, con direcciones, con descripciones         | 1.297 | 0.755 | 0.185 |
-| Con categorías, con direcciones                            | 1.282 | 0.750 | 0.195 |
-| Sin categorías, con direcciones                            | 1.318 | 0.772 | 0.172 |
+| Direcciones y descripciones                                | 1.330 | 0.770 | 0.165 |
+| Solo direcciones                                           | 1.318 | 0.772 | 0.172 |
+| Categorías, direcciones y descripciones                    | 1.297 | 0.755 | 0.185 |
+| Categorías y direcciones                                   | 1.282 | 0.750 | 0.195 |
+
 
 Se ha decidido utilizar como variables de entrada las categorías, las variables numéricas y únicamente las direcciones. Estos resultados nos indican que el modelo no ha logrado predecir correctamente los valores de rating. El bajo valor de R² (19.5%) indica que el modelo apenas explica una pequeña fracción de la variabilidad de la variable objetivo. Además, los errores significativos en las predicciones, representados por los valores altos de MSE y MAE, evidencian que el modelo tiene dificultades para capturar los patrones clave en los datos.
 
@@ -157,10 +158,10 @@ Se ha decidido utilizar como variables de entrada las categorías, las variables
 
 | Variables de Entrada                            |   MSE |   MAE |   R2  |
 |-------------------------------------------------|-------|-------|-------|
-| Con categorías, descripciones y direcciones     | 1.294 | 0.759 | 0.187 |
-| Sin categorías, descripciones y direcciones     | 1.315 | 0.773 | 0.173 |
-| Con categorías y descripciones                  | 1.265 | 0.749 | 0.205 |
-| Con categorías y direcciones                    | 1.339 | 0.771 | 0.159 |
+| Categorías, direcciones y descripciones         | 1.294 | 0.759 | 0.187 |
+| Direcciones y descripciones                     | 1.315 | 0.773 | 0.173 |
+| Categorías y direcciones                        | 1.339 | 0.771 | 0.159 |
+| Categorías y descripciones                      | 1.265 | 0.749 | 0.205 |
 
 Para esta vectorización, el rendimiento del modelo es ligeramente mejor al utilizar la combinación de variables numéricas, categorías y descripciones.
 
@@ -221,7 +222,7 @@ Y las métricas para la columna desc:
 | MSE       | 1.507    |
 | R² Score  | 0.0534   |
 
-Observamos que los resultados son prácticamente iguales.
+Observamos que los resultados son muy similares.
 
 ---
 
@@ -256,10 +257,10 @@ En este apartado se realiza el fine-tunning de un modelo preentrenado de BERT pa
 
 | Variables de Entrada             |   Modelo          |   MSE   |   R2    |
 |----------------------------------|-------------------|---------|---------|
-| Descripciones                   | Red Neuronal      | 1.451   | 0.0887  |
-| Descripciones                   | Random Forest     | 1.405   | 0.1173  |
-| Direcciones                     | Red Neuronal      | 1.477   | 0.0723  |
-| Direcciones                     | Random Forest     | 1.328   | 0.1657  |
+| Descripciones                    | Red Neuronal      | 1.451   | 0.0887  |
+| Descripciones                    | Random Forest     | 1.405   | 0.1173  |
+| Direcciones                      | Red Neuronal      | 1.477   | 0.0723  |
+| Direcciones                      | Random Forest     | 1.328   | 0.1657  |
 
 
 ### 6. Extensión 

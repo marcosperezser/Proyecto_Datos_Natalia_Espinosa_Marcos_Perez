@@ -216,22 +216,22 @@ En esta extensión, hemos desarrollado un sistema que permite la generación aut
 
 Para ello hemos seguido los siguientes pasos:
 
-1. Preparación del conjunto de datos:
+#### 1. Preparación del conjunto de datos:
 Para entrenar el modelo, tomamos un conjunto de datos que contiene títulos, descripciones y pasos de preparación de recetas. Cada receta fue formateada en un texto estructurado, unificando el título, la descripción y las instrucciones de preparación Los datos formateados se almacenaron en un archivo de texto plano que sirvió como entrada para el entrenamiento del modelo.
 
-2. Modelo GPT-2:
+#### 2. Modelo GPT-2:
 
 Utilizamos GPT-2, un modelo preentrenado diseñado para generación de texto. Este modelo fue adaptado específicamente al dominio de las recetas mediante fine-tuning.
 
-3. Configuración del Entrenamiento:
+#### 3. Configuración del Entrenamiento:
 
 Definimos parámetros clave como el número de iteraciones, el tamaño de los subconjuntos de datos procesados por el modelo y la frecuencia con la que se guardaban los resultados intermedios del entrenamiento.
 También establecimos medidas para garantizar que el modelo gestionara correctamente recetas de diferentes longitudes.
 
-4. Generación de Recetas:
+#### 4. Generación de Recetas:
 Una vez ajustado el modelo, implementamos una funcionalidad para generar recetas a partir de un título proporcionado por el usuario. El modelo utiliza el título como un punto de partida para generar automáticamente una descripción y pasos detallados de la receta. Esto se realiza mediante un proceso de generación de texto autoregresivo, donde cada palabra generada depende de las anteriores.
 
-5. Ejemplo de Resultado
+#### 5. Ejemplo de Resultado
 
 El modelo ha logrado generar un texto estructurado a partir de introducir "cupcakes" como título. El resultado incluye una descripción introductoria, ingredientes y pasos de preparación que siguen el formato típico de una receta. Aunque presenta algunas incoherencias, como la referencia a una "tarta" en lugar de cupcakes, el modelo demuestra su capacidad para generar contenido relevante y mantener una lógica general en la creación de recetas.
 <div align="center">

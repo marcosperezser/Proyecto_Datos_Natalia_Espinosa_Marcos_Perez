@@ -7,10 +7,9 @@
 ---
 
 ### 1. Análisis de Variables de Entrada
-
-#### 1.1Análisis de las Variables Numéricas
-
 El conjunto de datos analizado contiene información detallada de 20.130 recetas de cocina, estructurado en variables textuales y numéricas. El objetivo principal del trabajo es abordar un problema de regresión para predecir la variable `rating`, que representa la valoración otorgada por los usuarios.
+
+#### 1.1 Análisis de las Variables Numéricas
 
 #### Matriz de Correlación
 

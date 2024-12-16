@@ -198,9 +198,15 @@ Los hiperparámetros de tasa de aprendizaje y numero de epocas se han ido modifi
 ### 4.2.3 Entrenamiento y evaluación con vectorización BERT
 
 
-### 5. Extensión 1
+### 5. Extensión 
 
-En la primera extension, hemos realizado una traduccion al francés de todas las recetas en cuyas descripciones o direcciones estuviese incluida la palabra "french". Para ello hemos creado una nueva base de datos incluyendo solo las recetas que incluyesen la palabra French. D
+### Traducciones
+
+En esta extensión, se ha llevado a cabo la traducción al francés de todas las recetas cuya descripción (desc) o instrucciones (directions) contenían la palabra "French". 
+Para ello se ha crado una nueva base de datos filtrando únicamente aquellas recetas en las que la palabra "French" estuviera presente en las columnas desc o directions del conjunto de datos original. Esto nos permitió enfocar el proceso de traducción en un subconjunto específico de recetas relevantes.
+
+Para la traducción, utilizamos el modelo preentrenado T5-base, que es ampliamente reconocido por su capacidad para realizar tareas de generación de texto, incluyendo traducción automática. Implementamos la traducción mediante el uso del pipeline text2text-generation proporcionado por la librería transformers.
+
 
 
 

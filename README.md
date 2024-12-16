@@ -116,7 +116,7 @@ El proceso para la vectorización Bert ha sido la siguiente:
 3. Tokenización: el texto se divide en subpalabras mediante el tokenizador de BERT. Este proceso convierte palabras completas en tokens compatibles con el vocabulario del modelo. Si el texto supera la longitud máxima admitida por BERT (512 tokens), se trunca para ajustarse a este límite.
 4. Mapeo de tokens y segmentos: cada token se convierte en un índice numérico correspondiente a su posición en el vocabulario del modelo.
 Adicionalmente, se crean IDs de segmentos que identifican si los tokens pertenecen a la primera o segunda oración (en tareas donde se analizan pares de frases). En este caso, cada oración se asigna alternativamente a un segmento.
-5. Generación de Embeddings: el modelo BERT procesa los tokens y genera representaciones para cada uno a través de múltiples capas internas. Estas representaciones, conocidas como estados ocultos, encapsulan información contextual rica sobre cómo las palabras interactúan entre sí en el texto. Para obtener un único vector que represente el texto completo, se promedian las representaciones de todos los tokens.
+5. Generación de Embeddings: el modelo BERT procesa los tokens y genera representaciones para cada uno a través de múltiples capas internas. Estas representaciones, conocidas como estados ocultos, encapsulan información contextual sobre cómo interactúan entre sí las palabras en el texto. Para obtener un único vector que represente el texto completo, se promedian las representaciones de todos los tokens.
 6. El resultado final es una lista de embeddings, donde cada vector es una representación numérica del texto procesado.
 
 ---

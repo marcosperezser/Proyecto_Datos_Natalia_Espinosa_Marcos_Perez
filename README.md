@@ -1,9 +1,8 @@
-# Proyecto Final
+# Proyecto Final Tratamiento de Datos
 
-## Tratamiento de Datos
+## Máster de Ingeniería de Telecomunicación
 
-### Máster de Ingeniería de Telecomunicación
-
+### Marcos Pérez Serrano 100451409 Natalia Espinosa Muñoz 100451577
 ---
 
 ### 1. Análisis de Variables de Entrada

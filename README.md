@@ -170,7 +170,6 @@ Una vez aplicada la vectorización utilizando BERT, se analizaron los resultados
 
 ### 4.2 Red Neuronal
 
-
 Se ha implementado una red neuronal NN densa. Esta red está compuesta por varias capas totalmente conectadas, donde cada nodo de una capa está conectado con todos los nodos de la capa siguiente.
 
 El modelo fue diseñado con las siguientes características:
@@ -187,6 +186,8 @@ Los hiperparámetros de tasa de aprendizaje y numero de epocas se han ido modifi
 
 ### 4.2.1 Entrenamiento y evaluación con vectorización TF-IDF
 
+
+
 ### 4.2.2 Entrenamiento y evaluación con vectorización WORD2VEC
 | Métrica   |   Valor  |
 |-----------|----------|
@@ -195,5 +196,15 @@ Los hiperparámetros de tasa de aprendizaje y numero de epocas se han ido modifi
 
 
 ### 4.2.3 Entrenamiento y evaluación con vectorización BERT
+
+
+### 5. Extensión 1
+
+En la primera extension, hemos realizado una traduccion al francés de todas las recetas en cuyas descripciones o direcciones estuviese incluida la palabra "french". Para ello hemos creado una nueva base de datos incluyendo solo las recetas que incluyesen la palabra French. D
+
+
+
+
+
 
 

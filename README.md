@@ -168,6 +168,13 @@ Para esta vectorización, el rendimiento del modelo es ligeramente mejor al util
 
 Una vez aplicada la vectorización utilizando BERT, se analizaron los resultados del modelo con las representaciones vectorizadas de las descripciones y las direcciones.
 
+| Variables de Entrada |   MSE |   MAE |   R2  |
+|----------------------|-------|-------|-------|
+| Direcciones          | 1.357 | 0.783 | 0.1476|
+| Descripciones        | 1.398 | 0.787 | 0.121 |
+ 
+Observamos que los resultados del funcionamiento del modelo para los dos tipos de datos de entrada son practicamente iguales.
+
 
 ### 4.2 Red Neuronal
 
@@ -187,16 +194,34 @@ Los hiperparámetros de tasa de aprendizaje y numero de epocas se han ido modifi
 
 ### 4.2.1 Entrenamiento y evaluación con vectorización TF-IDF
 
-
+| Métrica   |   Valor  |
+|-----------|----------|
+| MSE       | 1.604    |
+| R² Score  | 0.0008   |
 
 ### 4.2.2 Entrenamiento y evaluación con vectorización WORD2VEC
+
 | Métrica   |   Valor  |
 |-----------|----------|
 | MSE       | 1.58178  |
 | R² Score  | 0.0152   |
 
-
 ### 4.2.3 Entrenamiento y evaluación con vectorización BERT
+
+Se ha realizado el estudio para directions: 
+| Métrica   |   Valor  |
+|-----------|----------|
+| MSE       | 1.493    |
+| R² Score  | 0.0621   |
+
+Y las métricas para la columna desc:
+
+| Métrica   |   Valor  |
+|-----------|----------|
+| MSE       | 1.507    |
+| R² Score  | 0.0534   |
+
+Observamos que los resultados son prácticamente iguales.
 
 ---
 

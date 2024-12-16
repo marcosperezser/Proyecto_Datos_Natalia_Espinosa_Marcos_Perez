@@ -265,7 +265,7 @@ En este apartado se realiza el fine-tunning de un modelo preentrenado de BERT pa
 
 ### 6. Extensión 
 
-### Traducción al francés
+#### Traducción al francés
 
 En esta extensión, se ha llevado a cabo la traducción al francés de todas las recetas cuya descripción (desc) o instrucciones (directions) contenían la palabra "French". 
 Para ello se ha crado una nueva base de datos filtrando únicamente aquellas recetas en las que la palabra "French" estuviera presente en las columnas desc o directions del conjunto de datos original. Esto nos permitió enfocar el proceso de traducción en un subconjunto específico de recetas relevantes.
@@ -276,7 +276,7 @@ Para la traducción, utilizamos el modelo preentrenado T5-base, que es ampliamen
   <img src="images/frances.png" alt="Extension: Traducciones" width="900px">
 </div>
 
-### Generación de Nuevas Recetas utilizando Modelos de Tipo Transformer
+#### Generación de Nuevas Recetas utilizando Modelos de Tipo Transformer
 En esta extensión, hemos desarrollado un sistema que permite la generación automática de recetas culinarias utilizando un modelo transformer, en concreto hemos utilizado GPT-2.
 
 Para ello hemos seguido los siguientes pasos:

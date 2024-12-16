@@ -140,8 +140,8 @@ Para cada una de las vectorizaciones, se han probado diferentes conjuntos de var
 - Descripciones
 - Categorías: Estas se han vectorizado utilizando una estrategia de codificación multibinaria como se ha comentado en el apartado 1.
 - Variables numéricas: Aunque estas variables mostraron una baja correlación con la variable de salida, se añadieron al modelo para enriquecer el conjunto de datos y aportar contexto adicional.
-- 
-### 4.2.1 Vectorización TF-IDF
+  
+### 4.1.1 Vectorización TF-IDF
 
 | Variables de Entrada                                       |   MSE |   MAE |   R2  |
 |------------------------------------------------------------|-------|-------|-------|
@@ -153,7 +153,7 @@ Para cada una de las vectorizaciones, se han probado diferentes conjuntos de var
 
 Se ha decidido utilizar como variables de entrada las categorías, las variables numéricas y únicamente las direcciones. Estos resultados nos indican que el modelo no ha logrado predecir correctamente los valores de rating. El bajo valor de R² (19.5%) indica que el modelo apenas explica una pequeña fracción de la variabilidad de la variable objetivo. Además, los errores significativos en las predicciones, representados por los valores altos de MSE y MAE, evidencian que el modelo tiene dificultades para capturar los patrones clave en los datos.
 
-### 4.2.2 Vectorización WORD2VEC
+### 4.1.2 Vectorización WORD2VEC
 
 
 | Variables de Entrada                            |   MSE |   MAE |   R2  |
@@ -165,7 +165,7 @@ Se ha decidido utilizar como variables de entrada las categorías, las variables
 
 Para esta vectorización, el rendimiento del modelo es ligeramente mejor al utilizar la combinación de variables numéricas, categorías y descripciones.
 
-### 4.2.3 Entrenamiento y evaluación con vectorización BERT
+### 4.1.3 Entrenamiento y evaluación con vectorización BERT
 
 Una vez aplicada la vectorización utilizando BERT, se analizaron los resultados del modelo con las representaciones vectorizadas de las descripciones y las direcciones.
 

@@ -62,3 +62,9 @@ Lematización:
 
 Además, se comprueba si la entrada es una lista (como puede ser el caso de textos tokenizados previos) y, en ese caso, se unen los elementos en una única cadena de texto. La salida de esta función es una lista de tokens limpios y lematizados, que pueden ser utilizados posteriormente en técnicas de vectorización como TF-IDF, Word2Vec, o embeddings contextuales.
 
+---
+
+### 3. Representación vectorial de los documentos mediante tres procedimientos diferentes:
+
+TF-IDF
+ 

@@ -37,6 +37,7 @@ En este análisis se ha visualizado la relación entre la variable de salida rat
   <img src="images/AnalisisCategorias2.png" alt="Gráfica Categorias" width="35%" style="display:inline-block;">
 </div>
 
+---
 
 ### 2. Implementación de un pipeline para el preprocesado de los textos. 
 Se ha implementado un pipeline de preprocesado de textos con el objetivo de preparar los datos textuales para su posterior análisis y representación vectorial. Se han realizado en una serie de transformaciones aplicadas al texto, utilizando la librería NLTK. 

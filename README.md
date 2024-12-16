@@ -83,6 +83,6 @@ Se ha representado en un gráfico la distribución de tokens para la columna des
 </div>
 
 <div align="center">
-  <img src="images/ImagenTokenDesc.png" alt="Distribución Token Directions" width="400px">
+  <img src="images/ImagenTokenDesc.jpg" alt="Distribución Token Directions" width="400px">
 </div>
 

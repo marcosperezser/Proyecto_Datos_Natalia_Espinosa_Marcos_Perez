@@ -107,4 +107,39 @@ Posteriormente, se extraen los vectores de las palabras del vocabulario y se apl
   <img src="images/Word2VecDir.png" alt="Distribución Word2Vec Dir" width="400px">
 </div>
 
+#### 3.3 BERT
+
+
+---
+
+### 4. Entrenamiento y evaluación de modelos de regresión
+
+
+### 4.1 Red Neuronal
+
+### 4.1.1 Entrenamiento y evaluación con vectorización TF-IDF
+
+### 4.1.2 Entrenamiento y evaluación con vectorización WORD2VEC
+
+### 4.1.3 Entrenamiento y evaluación con vectorización BERT
+
+### 4.2 RandomForest
+
+Como primer paso en la implementación del modelo, se dividió el conjunto de datos de entrada (X) y la columna de salida ratings (Y) en subconjuntos de entrenamiento y prueba utilizando train_test_split. Se ha asignado el 80% de los datos al conjunto de entrenamiento y el 20% restante al conjunto de prueba, con el objetivo de mejorar la evaluación del modelo al evaluar conjunto de datos no vistos durante el entrenamiento.
+
+Posteriormente, el conjunto de entrenamiento fue subdividido en un conjunto de entrenamiento y un conjunto de validación, asignando el 70% de los datos originales de entrenamiento para entrenamiento y el 30% para validación. Este conjunto de validación se utiliza para evaluar el rendimiento del modelo y seleccionar los mejores hiperparámetros garantizando así que el modelo no se ajuste en exceso al conjunto de entrenamiento.
+
+Por tanto, para este modelo se ha realizado una búsqueda de hiperparámetros utilizando GridSearchCV con el objetivo de optimizar el rendimiento del algoritmo Random Forest y encontrar la combinación de parámetros que minimizara el error en la predicción. Existen varios hiperparámetros que afectan la capacidad de generalización y ajuste, como el número de árboles, la profundidad máxima del árbol, el número mínimo de muestras requeridas para dividir un nodo, y el número mínimo de muestras por hoja y max_features, que controla la cantidad de características consideradas en cada división.
+
+Los mejores hiperparámetros encontrado fueron: n_estimators=500, max_depth=50, min_samples_split=2, min_samples_leaf=1 y max_features='sqrt'. Con estos valores óptimos, se entrenó un modelo final sobre el conjunto completo de entrenamiento (excluyendo la validación) para maximizar su capacidad de generalización. 
+
+Posteriormente, se evaluó este modelo final en el conjunto de prueba.
+
+### 4.2.1 Entrenamiento y evaluación con vectorización TF-IDF
+
+### 4.2.2 Entrenamiento y evaluación con vectorización WORD2VEC
+
+### 4.2.3 Entrenamiento y evaluación con vectorización BERT
+
+
 

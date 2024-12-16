@@ -304,8 +304,4 @@ El modelo ha logrado generar un texto estructurado a partir de introducir "cupca
   <img src="images/extension2.png" alt="Extension: Traducciones" width="900px">
 </div>
 
-### 6. Referencias
-
-[1] https://mccormickml.com/2019/05/14/BERT-word-embeddings-tutorial/
-
 

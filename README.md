@@ -114,14 +114,11 @@ Posteriormente, se extraen los vectores de las palabras del vocabulario y se apl
 
 ### 4. Entrenamiento y evaluación de modelos de regresión
 
-
-### 4.1 Red Neuronal
-
-### 4.1.1 Entrenamiento y evaluación con vectorización TF-IDF
-
-### 4.1.2 Entrenamiento y evaluación con vectorización WORD2VEC
-
-### 4.1.3 Entrenamiento y evaluación con vectorización BERT
+Para cada una de las vectorizaciones, se han probado diferentes conjuntos de variables de entrada con el objetivo de identificar qué columnas ofrecen mejores resultados en las métricas de evaluación. Los experimentos se realizaron utilizando la vectorización de las siguientes columnas:
+- Direcciones
+- Descripciones
+- Categorías: Estas se han vectorizado utilizando una estrategia de codificación multibinaria como se ha comentado en el apartado 1.
+- Variables numéricas: Aunque estas variables mostraron una baja correlación con la variable de salida, se añadieron al modelo para enriquecer el conjunto de datos y aportar contexto adicional.
 
 ### 4.2 RandomForest
 
@@ -137,9 +134,29 @@ Posteriormente, se evaluó este modelo final en el conjunto de prueba.
 
 ### 4.2.1 Entrenamiento y evaluación con vectorización TF-IDF
 
+## Resumen de Métricas de Evaluación
+
+| Variables de Entrada Incluidas                             |   MSE |   MAE |   R2  |
+|------------------------------------------------------------|-------|-------|-------|
+| Sin categorías, con direcciones, con descripciones         | 1.330 | 0.770 | 0.165 |
+| Con categorías, con direcciones, con descripciones         | 1.297 | 0.755 | 0.185 |
+| Con categorías, con direcciones                            | 1.282 | 0.750 | 0.195 |
+| Sin categorías, con direcciones                            | 1.318 | 0.772 | 0.172 |
+
+Se ha decidido utilizar como variables de entrada las categorías, las variables numéricas y únicamente las direcciones. Estos resultados nos indican que el modelo no ha logrado predecir correctamente los valores de rating. El bajo valor de R² (19.5%) indica que el modelo apenas explica una pequeña fracción de la variabilidad de la variable objetivo. Además, los errores significativos en las predicciones, representados por los valores altos de MSE y MAE, evidencian que el modelo tiene dificultades para capturar los patrones clave en los datos.
+
+
 ### 4.2.2 Entrenamiento y evaluación con vectorización WORD2VEC
 
 ### 4.2.3 Entrenamiento y evaluación con vectorización BERT
 
+
+### 4.1 Red Neuronal
+
+### 4.1.1 Entrenamiento y evaluación con vectorización TF-IDF
+
+### 4.1.2 Entrenamiento y evaluación con vectorización WORD2VEC
+
+### 4.1.3 Entrenamiento y evaluación con vectorización BERT
 
 

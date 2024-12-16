@@ -253,6 +253,15 @@ En este apartado se realiza el fine-tunning de un modelo preentrenado de BERT pa
 6. **Evaluación y guardado**  
    Al terminar el entrenamiento, el modelo se evalúa en los datos de prueba para medir su rendimiento. Finalmente, se guarda el modelo ajustado y su tokenizador como `fine-tuned-bert`, para que puedan reutilizarse en futuras predicciones.
 
+
+| Variables de Entrada             |   Modelo          |   MSE   |   R2    |
+|----------------------------------|-------------------|---------|---------|
+| Descripciones                   | Red Neuronal      | 1.451   | 0.0887  |
+| Descripciones                   | Random Forest     | 1.405   | 0.1173  |
+| Direcciones                     | Red Neuronal      | 1.477   | 0.0723  |
+| Direcciones                     | Random Forest     | 1.328   | 0.1657  |
+
+
 ### 6. Extensión 
 
 ### Traducción al francés

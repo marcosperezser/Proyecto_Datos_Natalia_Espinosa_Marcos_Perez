@@ -34,5 +34,5 @@ En este análisis se ha visualizado la relación entre la variable de salida rat
 
 <div align="center">
   <img src="images/AnalisisCategorias.png" alt="Gráfica Categorias" width="50%" style="display:inline-block; margin-right:10px;">
-  <img src="images/AnalisisCategorias2.png" alt="Gráfica Categorias" width="40%" style="display:inline-block;">
+  <img src="images/AnalisisCategorias2.png" alt="Gráfica Categorias" width="35%" style="display:inline-block;">
 </div>

@@ -263,6 +263,7 @@ En este apartado se realiza el fine-tunning de un modelo preentrenado de BERT pa
 | Direcciones                      | Red Neuronal      | 1.477   | 0.0723  |
 | Direcciones                      | Random Forest     | 1.328   | 0.1657  |
 
+---
 
 ### 6. Extensión 
 

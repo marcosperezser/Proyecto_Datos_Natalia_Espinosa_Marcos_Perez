@@ -101,11 +101,11 @@ Posteriormente, se extraen los vectores de las palabras del vocabulario y se apl
 
 
 <div align="center">
-  <img src="images/descword2vec.png" alt="Distribución Word2Vec Desc" width="400px">
+  <img src="images/descword2vec.png" alt="Distribución Word2Vec Desc" width="80%">
 </div>
 
 <div align="center">
-  <img src="images/dirword2vec.png" alt="Distribución Word2Vec Dir" width="400px">
+  <img src="images/dirword2vec.png" alt="Distribución Word2Vec Dir" width="80%">
 </div>
 
 #### 3.3 BERT

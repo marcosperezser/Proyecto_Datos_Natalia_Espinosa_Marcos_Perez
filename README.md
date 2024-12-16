@@ -225,28 +225,33 @@ Observamos que los resultados son prácticamente iguales.
 
 ---
 
-### 5. Fine-tunning con Hugging Face
+### 5. Fine-tuning con Hugging Face
 
-El fine-tuning de BERT consiste en ajustar los pesos del modelo preentrenado para una tarea específica, en este caso, regresión. A diferencia de la vectorización previa (donde se generaron representaciones de texto para usarlas con modelos como Random Forest o redes neuronales), en el fine-tuning se entrena el modelo completo, adaptando todas sus capas.
+En este apartado se realiza el fine-tunning de un modelo preentrenado de BERT para resolver la tarea específica de predicción de la variable rating. Este proceso permite entrenar todas las capas del modelo, adaptándolo completamente a nuestra base de datos.
 
-Los pasos realizar el fine-tuning son:
+#### Pasos para realizar el fine-tuning:
 
-#### 1. Carga del modelo preentrenado: 
-Se utiliza BertForSequenceClassification de Hugging Face, diseñado para tareas supervisadas. En este caso, se configura con una sola salida continua (num_labels=1) para realizar predicciones numéricas.
+1. **Selección del modelo base**  
+   Se utiliza el modelo preentrenado `bert-base-uncased` disponible en Hugging Face. Este modelo está diseñado para procesar texto en minúsculas. Para adaptarlo a una tarea de regresión, se usa la clase `BertForSequenceClassification`, configurando su salida para generar un único valor continuo (`num_labels=1`).
 
-#### 2. Definición de argumentos de entrenamiento: 
-Se especifican parámetros clave como el número de épocas, tamaño de lote, tasa de aprendizaje, pasos de calentamiento (warmup), y regularización (weight_decay). Estos controlan cómo el modelo ajusta sus pesos.
+2. **Tokenización de los textos**  
+   Los textos se procesan con el tokenizador asociado a `bert-base-uncased`. Este convierte las frases en secuencias de números. Además se truncan los textos largos y se rellenan los cortos para igualar la longitud.
 
-#### 3. Uso de Trainer de Hugging Face: 
+3. **Preparación de los datos**  
+   Los datos tokenizados y las etiquetas numéricas se estructuran en un formato que el modelo pueda utilizar. Esto se hace mediante un dataset compatible con PyTorch.
 
-Se emplea el objeto Trainer, que automatiza el proceso de entrenamiento. Este recibe: el modelo ajustado, los datos de entrenamiento y evaluación y los parámetros definidos en los argumentos de entrenamiento.
+4. **Configuración del entrenamiento**  
+   Se definen parámetros esenciales para entrenar el modelo:
+   - **Épocas**: número de veces que el modelo recorrerá los datos de entrenamiento. Configurado a 1.
+   - **Tamaño del batch**: cantidad de ejemplos procesados en cada paso.
+   - **Warmup steps**: para estabilizar el inicio del entrenamiento. Configurado a 10.
+   - **Weight decay**: para evitar el sobreajuste. Configurado a 0.01.
 
-#### 4. Entrenamiento del modelo: 
-Durante el entrenamiento, el modelo ajusta los pesos de todas sus capas (incluida la capa preentrenada de BERT) para minimizar el error en las predicciones numéricas. Esto permite que BERT no solo use sus representaciones aprendidas, sino que las refine específicamente para esta tarea.
+5. **Entrenamiento del modelo**  
+   Con el objeto `Trainer` de Hugging Face, se entrena el modelo utilizando los datos preparados. Durante este proceso, todas las capas del modelo, incluidas las preentrenadas de `bert-base-uncased`, se ajustan a los datos específicos de nuestra base de datos.
 
-#### 5. Evaluación y guardado: 
-Tras el entrenamiento, se evalúa el modelo con los datos de prueba y se guarda junto al tokenizador. Esto permite reutilizar el modelo ajustado directamente en futuras predicciones.
-
+6. **Evaluación y guardado**  
+   Al terminar el entrenamiento, el modelo se evalúa en los datos de prueba para medir su rendimiento. Finalmente, se guarda el modelo ajustado y su tokenizador como `fine-tuned-bert`, para que puedan reutilizarse en futuras predicciones.
 
 ### 6. Extensión 
 

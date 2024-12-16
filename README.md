@@ -106,8 +106,5 @@ Posteriormente, se extraen los vectores de las palabras del vocabulario y se apl
 <div align="center">
   <img src="images/Word2VecDir.png" alt="Distribución Word2Vec Dir" width="400px">
 </div>
-La distribución de tokens para la columna directions: 
-<div align="center">
-  <img src="images/ImagenTokenDesc.jpg" alt="Distribución Token Desc" width="400px">
-</div>
+
 

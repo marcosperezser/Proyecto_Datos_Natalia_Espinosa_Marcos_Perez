@@ -76,7 +76,7 @@ Después de este filtrado, se aplica el modelo TF-IDF) sobre la representación 
 
 Los términos comunes en todo el corpus, como palabras de uso cotidiano, recibiran menos peso, mientras que los términos que son más específicos para un documento individual se consideren más importantes. El resultado es una representación numérica de los textos en forma de vectores ponderados, que reflejan la relevancia relativa de cada término en el contexto del corpus.
 
-Se ha representado en un gráfico la distribución de tokens para la columna desc:
+Se ha representado en un gráfico la distribución de tokens para la columna desc: 
 
 <div align="center">
   <img src="images/TokenDesc.png" alt="Distribución Token Desc" width="400px">

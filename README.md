@@ -109,18 +109,20 @@ Posteriormente, se extraen los vectores de las palabras del vocabulario y se apl
 
 #### 3.3 BERT
 
+El proceso para la vectorización Bert ha sido la siguiente:
+1. Cargamos el modelo preentrenado: se utiliza un modelo preentrenado de BERT que se encuentra disponible en la librería transformers de Hugging Face. 
+2. Preparación del texto antes de procesar el texto: se añaden [CLS] al inicio del texto y [SEP] al final, que indica la separación entre frases o el final del texto.
+3. Tokenización: el texto se divide en subpalabras mediante el tokenizador de BERT. Este proceso convierte palabras completas en tokens compatibles con el vocabulario del modelo. Si el texto supera la longitud máxima admitida por BERT (512 tokens), se trunca para ajustarse a este límite.
+4. Mapeo de tokens y segmentos: cada token se convierte en un índice numérico correspondiente a su posición en el vocabulario del modelo.
+Adicionalmente, se crean IDs de segmentos que identifican si los tokens pertenecen a la primera o segunda oración (en tareas donde se analizan pares de frases). En este caso, cada oración se asigna alternativamente a un segmento.
+5. Generación de Embeddings: el modelo BERT procesa los tokens y genera representaciones para cada uno a través de múltiples capas internas. Estas representaciones, conocidas como estados ocultos, encapsulan información contextual rica sobre cómo las palabras interactúan entre sí en el texto. Para obtener un único vector que represente el texto completo, se promedian las representaciones de todos los tokens.
+6. El resultado final es una lista de embeddings, donde cada vector es una representación numérica del texto procesado.
 
 ---
 
 ### 4. Entrenamiento y evaluación de modelos de regresión
 
-Para cada una de las vectorizaciones, se han probado diferentes conjuntos de variables de entrada con el objetivo de identificar qué columnas ofrecen mejores resultados en las métricas de evaluación. Los experimentos se realizaron utilizando la vectorización de las siguientes columnas:
-- Direcciones
-- Descripciones
-- Categorías: Estas se han vectorizado utilizando una estrategia de codificación multibinaria como se ha comentado en el apartado 1.
-- Variables numéricas: Aunque estas variables mostraron una baja correlación con la variable de salida, se añadieron al modelo para enriquecer el conjunto de datos y aportar contexto adicional.
-
-### 4.2 RandomForest
+### 4.1 Entrenamiento y evaluación con RandomForest
 
 Como primer paso en la implementación del modelo, se dividió el conjunto de datos de entrada (X) y la columna de salida ratings (Y) en subconjuntos de entrenamiento y prueba utilizando train_test_split. Se ha asignado el 80% de los datos al conjunto de entrenamiento y el 20% restante al conjunto de prueba, con el objetivo de mejorar la evaluación del modelo al evaluar conjunto de datos no vistos durante el entrenamiento.
 
@@ -132,11 +134,15 @@ Los mejores hiperparámetros encontrado fueron: n_estimators=500, max_depth=50, 
 
 Posteriormente, se evaluó este modelo final en el conjunto de prueba.
 
-### 4.2.1 Entrenamiento y evaluación con vectorización TF-IDF
+Para cada una de las vectorizaciones, se han probado diferentes conjuntos de variables de entrada con el objetivo de identificar qué columnas ofrecen mejores resultados en las métricas de evaluación. Los experimentos se realizaron utilizando la vectorización de las siguientes columnas:
+- Direcciones
+- Descripciones
+- Categorías: Estas se han vectorizado utilizando una estrategia de codificación multibinaria como se ha comentado en el apartado 1.
+- Variables numéricas: Aunque estas variables mostraron una baja correlación con la variable de salida, se añadieron al modelo para enriquecer el conjunto de datos y aportar contexto adicional.
+- 
+### 4.2.1 Vectorización TF-IDF
 
-## Resumen de Métricas de Evaluación
-
-| Variables de Entrada Incluidas                             |   MSE |   MAE |   R2  |
+| Variables de Entrada                                       |   MSE |   MAE |   R2  |
 |------------------------------------------------------------|-------|-------|-------|
 | Sin categorías, con direcciones, con descripciones         | 1.330 | 0.770 | 0.165 |
 | Con categorías, con direcciones, con descripciones         | 1.297 | 0.755 | 0.185 |
@@ -145,8 +151,18 @@ Posteriormente, se evaluó este modelo final en el conjunto de prueba.
 
 Se ha decidido utilizar como variables de entrada las categorías, las variables numéricas y únicamente las direcciones. Estos resultados nos indican que el modelo no ha logrado predecir correctamente los valores de rating. El bajo valor de R² (19.5%) indica que el modelo apenas explica una pequeña fracción de la variabilidad de la variable objetivo. Además, los errores significativos en las predicciones, representados por los valores altos de MSE y MAE, evidencian que el modelo tiene dificultades para capturar los patrones clave en los datos.
 
+### 4.2.2 Vectorización WORD2VEC
 
-### 4.2.2 Entrenamiento y evaluación con vectorización WORD2VEC
+## Resultados Word2Vec
+
+| Variables Incluidas                              |   MSE |   MAE |   R2  |
+|--------------------------------------------------|-------|-------|-------|
+| Con categorías, descripciones y direcciones     | 1.294 | 0.759 | 0.187 |
+| Sin categorías, descripciones y direcciones     | 1.315 | 0.773 | 0.173 |
+| Con categorías y descripciones                  | 1.265 | 0.749 | 0.205 |
+| Con categorías y direcciones                    | 1.339 | 0.771 | 0.159 |
+
+Para esta vectorización, el rendimiento del modelo es ligeramente mejor al utilizar la combinación de variables numéricas, categorías y descripciones.
 
 ### 4.2.3 Entrenamiento y evaluación con vectorización BERT
 

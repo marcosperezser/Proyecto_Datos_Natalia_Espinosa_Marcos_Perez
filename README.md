@@ -2,7 +2,8 @@
 
 ## Máster de Ingeniería de Telecomunicación
 
-### Marcos Pérez Serrano 100451409 Natalia Espinosa Muñoz 100451577
+### Marcos Pérez Serrano 100451409 
+### Natalia Espinosa Muñoz 100451577
 ---
 
 ### 1. Análisis de Variables de Entrada

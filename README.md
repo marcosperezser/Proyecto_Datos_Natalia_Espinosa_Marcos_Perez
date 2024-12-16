@@ -208,7 +208,7 @@ Para ello se ha crado una nueva base de datos filtrando únicamente aquellas rec
 Para la traducción, utilizamos el modelo preentrenado T5-base, que es ampliamente reconocido por su capacidad para realizar tareas de generación de texto, incluyendo traducción automática. Implementamos la traducción mediante el uso del pipeline text2text-generation proporcionado por la librería transformers.
 
 <div align="center">
-  <img src="images/Traduciones.png" alt="Extension: Traducciones" width="600px">
+  <img src="images/Traduciones.png" alt="Extension: Traducciones" width="1000px">
 </div>
 
 

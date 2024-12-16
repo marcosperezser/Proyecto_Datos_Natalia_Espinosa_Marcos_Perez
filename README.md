@@ -8,20 +8,6 @@
 
 ### Análisis de Variables de Entrada
 
-En este apartado, se realiza un análisis detallado de las variables de entrada para comprender su relación con la variable de salida y su relevancia en el problema abordado.
-
-#### Visualización de la Relación entre la Variable de Salida y Categorías en `categories`
-
-# Proyecto Final
-
-## Tratamiento de Datos
-
-### Máster de Ingeniería de Telecomunicación
-
----
-
-### Análisis de Variables de Entrada
-
 ### Análisis de las Variables Numéricas
 
 El conjunto de datos analizado contiene información detallada de 20.130 recetas de cocina, estructurado en variables textuales y numéricas. El objetivo principal del trabajo es abordar un problema de regresión para predecir la variable `rating`, que representa la valoración otorgada por los usuarios.

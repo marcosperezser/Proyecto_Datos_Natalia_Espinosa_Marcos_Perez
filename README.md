@@ -166,13 +166,35 @@ Para esta vectorización, el rendimiento del modelo es ligeramente mejor al util
 
 ### 4.2.3 Entrenamiento y evaluación con vectorización BERT
 
+Una vez aplicada la vectorización utilizando BERT, se analizaron los resultados del modelo con las representaciones vectorizadas de las descripciones y las direcciones.
 
-### 4.1 Red Neuronal
 
-### 4.1.1 Entrenamiento y evaluación con vectorización TF-IDF
+### 4.2 Red Neuronal
 
-### 4.1.2 Entrenamiento y evaluación con vectorización WORD2VEC
 
-### 4.1.3 Entrenamiento y evaluación con vectorización BERT
+Se ha implementado una red neuronal NN densa. Esta red está compuesta por varias capas totalmente conectadas, donde cada nodo de una capa está conectado con todos los nodos de la capa siguiente.
+
+El modelo fue diseñado con las siguientes características:
+- Capas ocultas: Dos capas ocultas con 50 y 25 neuronas, respectivamente.
+- Funciones de activación: Se utilizaron funciones de activación ReLU (Rectified Linear Unit) en las capas ocultas. Esto introduce no linealidad en la red, permitiendo que el modelo aprenda relaciones más complejas en los datos.
+- Capa de salida: Una única neurona en la capa de salida, diseñada para predecir un valor continuo (el objetivo de la tarea de regresión).
+
+Para el entrenamiento de la red neuronal se ha utilizado el Error Cuadrático Medio MSE como función de pérdide donde se mide el promedio de los errores al cuadrado entre las predicciones del modelo y los valores reales, penalizando los errores grandes. El objetivo durante el entrenamiento fue minimizar esta función.
+
+Se ha elegido el optimizador Adam, una de las técnicas de optimización más populares debido a su capacidad para adaptarse dinámicamente al tamaño del paso (learning rate) para cada parámetro.
+
+Los hiperparámetros de tasa de aprendizaje y numero de epocas se han ido modificando con el objetivo de minimizar el MSE y por lo tanto mejorar el rendimiento del modelo. Además se han utilizado Mini-batch Training que consiste en dividir los datos en fracciones más pequeñas para actualizar los pesos del modelo de forma iterativa. 
+
+
+### 4.2.1 Entrenamiento y evaluación con vectorización TF-IDF
+
+### 4.2.2 Entrenamiento y evaluación con vectorización WORD2VEC
+| Métrica   |   Valor  |
+|-----------|----------|
+| MSE       | 1.58178  |
+| R² Score  | 0.0152   |
+
+
+### 4.2.3 Entrenamiento y evaluación con vectorización BERT
 
 

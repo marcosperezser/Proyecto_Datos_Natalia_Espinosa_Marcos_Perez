@@ -20,7 +20,7 @@ Para analizar la relación entre estas variables numéricas y la variable objeti
 Sin embargo, al analizar la relación de estas variables con `rating`, se observa que la correlación es extremadamente baja, con valores cercanos a 0.007. Esto sugiere que las características nutricionales no tienen una influencia significativa en la predicción de la valoración de las recetas.
 
 <div align="center">
-  <img src="images/Imagen1.png" alt="Matriz correlación">
+  <img src="images/Imagen1.png" alt="Matriz correlación" width="400px">
 </div>
 
 

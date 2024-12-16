@@ -82,6 +82,7 @@ Se ha representado en un gráfico la distribución de tokens para la columna des
   <img src="images/ImagenTokenDir.jpg" alt="" width="400px">
 </div>
 
+La distribución de tokens para la columna directions: 
 <div align="center">
   <img src="images/ImagenTokenDesc.jpg" alt="Distribución Token Directions" width="400px">
 </div>
